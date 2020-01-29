@@ -1,0 +1,12 @@
+<div class="container">
+
+<h2><%= @restaurant.name %></h2>
+<p><%= @restaurant.address %></p>
+<p><%= @restaurant.phone_number %></p>
+<p><%= @restaurant.category.capitalize %></p>
+
+<%= link_to restaurants_path  do %>
+  <i class="fas fa-chevron-left"></i>
+<% end %>
+
+</div>
