@@ -5,6 +5,28 @@
 <p><%= @restaurant.phone_number %></p>
 <p><%= @restaurant.category.capitalize %></p>
 
+<h5>Reviews</h5>
+<% if @average == 'not rated' %>
+  <p><%= @average %></p>
+<% else %>
+  <% @average.times do %>
+    <i class="fas fa-star"></i>
+  <% end %>
+<% end %>
+
+<ul>
+  <% @restaurant.reviews.each do |review| %>
+    <li> <%= review.content %> </li>
+  <% end %>
+</ul>
+
+<%= link_to new_restaurant_review_path(@restaurant)  do %>
+  <i class="fas fa-pen"></i> Add a Review
+<% end %>
+
+<br>
+<br>
+
 <%= link_to restaurants_path  do %>
   <i class="fas fa-chevron-left"></i>
 <% end %>
